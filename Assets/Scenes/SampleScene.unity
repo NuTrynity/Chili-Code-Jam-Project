@@ -340,7 +340,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &845032353
+--- !u!1001 &1072738226
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -350,7 +350,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5486792557660775624, guid: b29ab4f5465f0805cb7c8f34c94e2e49, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Octopus
       objectReference: {fileID: 0}
     - target: {fileID: 5516694124757731504, guid: b29ab4f5465f0805cb7c8f34c94e2e49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,4 +403,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 845032353}
+  - {fileID: 1072738226}
