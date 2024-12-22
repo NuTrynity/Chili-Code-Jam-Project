@@ -1,16 +1,19 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GeneralMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Vector2 GetMousePosition()
     {
-        
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    // Update is called once per frame
-    void Update()
+    public Quaternion LookAt(Vector2 target, float rotationSpeed)
     {
-        
+        Vector3 direction = target - (Vector2)transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+
+        return Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }

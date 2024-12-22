@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+    public GeneralMovement gm;
     public player_properties mp;
     private Rigidbody2D rb;
 
@@ -12,13 +13,15 @@ public class player_movement : MonoBehaviour
 
     private void Update()
     {
-
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(transform.right * mp.move_speed);
+            rb.linearVelocity = transform.right * mp.move_speed;
         }
-        else {
+        else
+        {
             rb.linearVelocity = Vector2.zero;
         }
+
+        transform.rotation = gm.LookAt(gm.GetMousePosition(), mp.rotation_speed);
     }
 }
