@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class otcopus_detector : MonoBehaviour
 {
-    public GameObject retreat_point;
+    public Transform retreat_point;
 
     public LayerMask collidableLayers;
     public Transform shootPoint;
@@ -13,7 +13,7 @@ public class otcopus_detector : MonoBehaviour
             if(hit && hit.collider == other)
             {
                 Debug.Log("Octopus Detected");
-                other.GetComponent<target_manager>().ChangeTarget(retreat_point.transform);
+                other.GetComponent<target_manager>().ChangeTarget(retreat_point);
             }
         }
     }

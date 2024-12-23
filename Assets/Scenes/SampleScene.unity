@@ -359,6 +359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3134356312256419836, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
     - target: {fileID: 6296985127849414103, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.6
@@ -414,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 8011310322204837590, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
       propertyPath: retreat_point
       value: 
-      objectReference: {fileID: 1433390078}
+      objectReference: {fileID: 1433390079}
     - target: {fileID: 8011310322204837590, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
       propertyPath: collidableLayers.m_Bits
       value: 1
@@ -718,6 +722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1353190081977543654, guid: b29ab4f5465f0805cb7c8f34c94e2e49, type: 3}
+      propertyPath: retreat_path
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3911426621677314896, guid: b29ab4f5465f0805cb7c8f34c94e2e49, type: 3}
       propertyPath: destinationSetter
       value: 
@@ -766,6 +774,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977552798567349819, guid: b29ab4f5465f0805cb7c8f34c94e2e49, type: 3}
+      propertyPath: retreat_point
+      value: 
+      objectReference: {fileID: 1433390079}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

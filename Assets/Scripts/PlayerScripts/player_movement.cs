@@ -17,6 +17,10 @@ public class player_movement : MonoBehaviour
         {
             rb.linearVelocity = transform.right * mp.move_speed;
         }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rb.linearVelocity = -transform.right * mp.move_speed / 2;
+        }
         else
         {
             rb.linearVelocity = Vector2.zero;

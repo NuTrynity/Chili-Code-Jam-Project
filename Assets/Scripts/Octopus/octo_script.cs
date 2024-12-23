@@ -20,9 +20,4 @@ public class player_script : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, GetPlayerPosition(), speed * Time.deltaTime); 
         */
     }
-
-    private Vector2 GetPlayerPosition()
-    {
-        return GameObject.Find("Player").transform.position;
-    }
 }
