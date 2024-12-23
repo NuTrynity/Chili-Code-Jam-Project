@@ -10,12 +10,15 @@ public class target_manager : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        /* 
         if (other.CompareTag("Player")) {
             ChangeTarget(other.transform);
         }
+        */
     }
 
     public void ChangeTarget(Transform target) {
+        Debug.Log("Target Changed");
         destinationSetter.target = target;
     }
 }

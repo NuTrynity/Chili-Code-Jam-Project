@@ -407,33 +407,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8011310322204837590, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 814007411}
+    - target: {fileID: 8011310322204837590, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
+      propertyPath: retreat_point
+      value: 
+      objectReference: {fileID: 1433390078}
+    - target: {fileID: 8011310322204837590, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
+      propertyPath: collidableLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2854080416294807470, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3134356312256419836, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 814007412}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
---- !u!1 &814007411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3134356312256419836, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
+--- !u!4 &814007411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6690401994771604911, guid: a38f6c73844dd409c8572df0fe49d639, type: 3}
   m_PrefabInstance: {fileID: 814007410}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &814007412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814007411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3123e2738f2073b149433a49a73169bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  retreat_point: {fileID: 1433390078}
 --- !u!1 &917345899
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +704,7 @@ Transform:
   m_GameObject: {fileID: 1433390078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.98, y: 3.04, z: 0.5}
+  m_LocalPosition: {x: -7.04, y: 3.77, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
