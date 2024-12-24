@@ -10,6 +10,7 @@ public class bolt : MonoBehaviour
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
 
+        // Set bolt's rotation to be the same as the parent's rotation
         // transform.rotation = transform.parent.rotation;
     }
 
