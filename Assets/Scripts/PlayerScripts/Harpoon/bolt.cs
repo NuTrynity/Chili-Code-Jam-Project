@@ -1,20 +1,24 @@
+using System.Collections;
 using UnityEngine;
 
 public class bolt : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 10;
+    public float lifetime = 3f;
 
     private Rigidbody2D rb;
 
-    private void Awake() {
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
+        gameObject.SetActive(true);
 
-        // Set bolt's rotation to be the same as the parent's rotation
-        // transform.rotation = transform.parent.rotation;
+        StartCoroutine(DestroyBolt());
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.linearVelocity = transform.right * speed;
     }
 
@@ -29,5 +33,15 @@ public class bolt : MonoBehaviour
                 health.TakeDamage(damage);
             }
         }
+        else if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator DestroyBolt()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
     }
 }
