@@ -1,15 +1,20 @@
+using System.Collections;
 using UnityEngine;
 
 public class bolt : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 10;
+    public float lifetime = 3f;
 
     private Rigidbody2D rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameObject.SetActive(true);
+
+        StartCoroutine(DestroyBolt());
     }
 
     private void FixedUpdate()
@@ -32,5 +37,11 @@ public class bolt : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator DestroyBolt()
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(gameObject);
     }
 }
