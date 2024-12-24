@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class harpoon : MonoBehaviour
 {
+    public GameObject boltPrefab;
+    public Transform firePoint;
 
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            // shoot bolt
+            ShootBolt();
         }
     }
 
     private void ShootBolt() {
-        // Instantiate bolt
+        Instantiate(boltPrefab, firePoint.position, firePoint.rotation);
     }
 }

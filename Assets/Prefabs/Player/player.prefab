@@ -343,9 +343,10 @@ MonoBehaviour:
   move_speed: 0
   rotation_speed: 4
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &8669129732337281713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,9 +767,10 @@ MonoBehaviour:
   move_speed: 4
   rotation_speed: 2
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &6908959635318966974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +788,8 @@ MonoBehaviour:
   harpoon: {fileID: 0}
   flashlight: {fileID: 0}
   lamp: {fileID: 0}
+  upArmIsBusy: 0
+  downArmIsBusy: 0
 --- !u!114 &1384839044188718503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,9 +1072,10 @@ MonoBehaviour:
   move_speed: 0
   rotation_speed: 4
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &3805843620903976763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,9 +1201,10 @@ MonoBehaviour:
   move_speed: 0
   rotation_speed: 4
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &3197189850575392128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,9 +1387,10 @@ MonoBehaviour:
   move_speed: 0
   rotation_speed: 3
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &7680741276935742321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,9 +2136,10 @@ MonoBehaviour:
   move_speed: 0
   rotation_speed: 4
   bullets: 0
+  taskObjects: 0
+  harpoons: 0
   flashlights: 0
   lamps: 0
-  taskObjects: 0
 --- !u!114 &8803397656717334703
 MonoBehaviour:
   m_ObjectHideFlags: 0

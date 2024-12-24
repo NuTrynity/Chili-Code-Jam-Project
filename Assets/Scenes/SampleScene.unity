@@ -365,11 +365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683972937283516634, guid: 038abb1fbe8e0b787a2115bef938f800, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.84
+      value: -9.22
       objectReference: {fileID: 0}
     - target: {fileID: 2683972937283516634, guid: 038abb1fbe8e0b787a2115bef938f800, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -7.67
       objectReference: {fileID: 0}
     - target: {fileID: 2683972937283516634, guid: 038abb1fbe8e0b787a2115bef938f800, type: 3}
       propertyPath: m_LocalPosition.z
@@ -970,6 +970,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   legUp: {fileID: 0}
   legDown: {fileID: 0}
+  harpoon: {fileID: 0}
+  flashlight: {fileID: 0}
+  lamp: {fileID: 0}
+  upArmIsBusy: 0
+  downArmIsBusy: 0
 --- !u!1 &1657367202
 GameObject:
   m_ObjectHideFlags: 0

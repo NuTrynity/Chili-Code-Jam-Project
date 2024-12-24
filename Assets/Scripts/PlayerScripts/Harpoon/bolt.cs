@@ -7,13 +7,13 @@ public class bolt : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private void Awake() {
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
-
-        // transform.rotation = transform.parent.rotation;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.linearVelocity = transform.right * speed;
     }
 
@@ -27,6 +27,10 @@ public class bolt : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
+        }
+        else if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
     }
 }
