@@ -22,6 +22,7 @@ public class playerBeginning : MonoBehaviour
             rb.AddForce(new Vector2(force, 0), ForceMode2D.Impulse);
             rb.angularVelocity = rotationForce;
             rb.gameObject.transform.SetParent(null);
+            Destroy(this);
         }
     }
 }

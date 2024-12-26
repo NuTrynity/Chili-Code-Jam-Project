@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    public int max_health = 5;
-    private int health;
+    public int max_health = 25;
+    public int health;
+
+    public AudioSource takingDamage;
+    public AudioSource death;
 
     public HealthComponent()
     {
@@ -13,14 +16,15 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        takingDamage.Play();
         if (health <= 0)
         {
-            Die();
+           death.Play();
         }
     }
 
     public void Die()
     {
-        Destroy(gameObject);
+          
     }
 }

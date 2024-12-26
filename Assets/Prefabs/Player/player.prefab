@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 0
   rotation_speed: 4
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 0
   flashlights: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 8
   rotation_speed: 1.5
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 1
   flashlights: 1
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 0
   rotation_speed: 4
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 0
   flashlights: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 0
   rotation_speed: 4
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 0
   flashlights: 0
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 0
   rotation_speed: 3
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 0
   flashlights: 0
@@ -1718,14 +1718,14 @@ MonoBehaviour:
   - {x: -0.32294196, y: -0.08445309, z: 0}
   - {x: -0.36844102, y: 0.38865978, z: 0}
   - {x: -0.3628203, y: 0.6290143, z: 0}
-  - {x: -0.108934216, y: 0.8064037, z: 0}
-  - {x: 0.08365797, y: 0.72495824, z: 0}
-  - {x: 0.31240335, y: 0.5589826, z: 0}
-  - {x: 0.34602237, y: 0.32818562, z: 0}
-  - {x: 0.23277617, y: 0.2796802, z: 0}
-  - {x: 0.17486319, y: 0.19587596, z: 0}
-  - {x: 0.14830829, y: 0.0043657753, z: 0}
-  - {x: 0.40798694, y: -0.09581254, z: 0}
+  - {x: -0.117846526, y: 0.7898594, z: 0}
+  - {x: 0.057979524, y: 0.7018654, z: 0}
+  - {x: 0.24228491, y: 0.5390451, z: 0}
+  - {x: 0.26480553, y: 0.30902737, z: 0}
+  - {x: 0.18911959, y: 0.2939342, z: 0}
+  - {x: 0.05779568, y: 0.21618283, z: 0}
+  - {x: 0.056448076, y: 0.0168784, z: 0}
+  - {x: 0.35731962, y: -0.09565803, z: 0}
   - {x: 0.28493932, y: -0.26825997, z: 0}
   - {x: 0.38114887, y: -0.26972243, z: 0}
   - {x: 0.41733363, y: -0.35397738, z: 0}
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   - {x: -0.12298499, y: -0.3951766, z: 0}
   - {x: -0.24684136, y: -0.3830458, z: 0}
   - {x: -0.30037805, y: -0.31930408, z: 0}
-  m_ShapePathHash: 771672179
+  m_ShapePathHash: 81874269
   m_InstanceId: 0
   m_ShadowShape2DComponent: {fileID: 0}
   m_ShadowShape2DProvider:
@@ -1745,8 +1745,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0.04143253, y: -0.002093196, z: 0}
-      m_Extent: {x: 0.40987355, y: 0.8084969, z: 0}
+      m_Center: {x: 0.04143253, y: -0.010365307, z: 0}
+      m_Extent: {x: 0.40987355, y: 0.8002248, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.1
     m_FlipX: 0
@@ -1893,7 +1893,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5442630468192248564}
   - component: {fileID: 4883368205593838540}
-  - component: {fileID: 2939987980316662473}
   m_Layer: 0
   m_Name: armUpSprite
   m_TagString: Untagged
@@ -1971,62 +1970,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2939987980316662473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7455153560721478340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_Priority: 20
-  m_ComponentVersion: 5
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_AlphaCutoff: 0.1
-  m_ApplyToSortingLayers: 9d0484ad83d699b200000000
-  m_ShapePath:
-  - {x: -0.06347537, y: -0.95942056, z: 0}
-  - {x: -0.21291992, y: -0.7959866, z: 0}
-  - {x: -0.18975899, y: -0.19381578, z: 0}
-  - {x: -0.17927906, y: 0.7972972, z: 0}
-  - {x: -0.05542922, y: 0.88545954, z: 0}
-  - {x: 0.1746456, y: 0.7834012, z: 0}
-  - {x: 0.15301438, y: 0.23233634, z: 0}
-  - {x: 0.15611668, y: -0.8621468, z: 0}
-  m_ShapePathHash: -159589471
-  m_InstanceId: 0
-  m_ShadowShape2DComponent: {fileID: 0}
-  m_ShadowShape2DProvider:
-    rid: -2
-  m_ShadowCastingSource: 1
-  m_ShadowMesh:
-    m_Mesh: {fileID: 0}
-    m_LocalBounds:
-      m_Center: {x: -0.019137159, y: -0.03698051, z: 0}
-      m_Extent: {x: 0.19378276, y: 0.92244005, z: 0}
-    m_EdgeProcessing: 1
-    m_TrimEdge: 0.04
-    m_FlipX: 0
-    m_FlipY: 0
-    m_InitialTrim: 0
-  m_CastingOption: 2
-  m_PreviousTrimEdge: 0.04
-  m_PreviousEdgeProcessing: 1
-  m_PreviousShadowCastingSource: 1
-  m_PreviousShadowShape2DSource: {fileID: 4883368205593838540}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!1 &8230812430063879243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +1980,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4966458572665693969}
   - component: {fileID: 1741406893569984133}
-  - component: {fileID: 21122907609362717}
   m_Layer: 0
   m_Name: armDownSprite
   m_TagString: Untagged
@@ -2115,62 +2057,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &21122907609362717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8230812430063879243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_Priority: 7
-  m_ComponentVersion: 5
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_AlphaCutoff: 0.1
-  m_ApplyToSortingLayers: 9d0484ad83d699b200000000
-  m_ShapePath:
-  - {x: -0.06347537, y: -0.95942056, z: 0}
-  - {x: -0.21291992, y: -0.7959866, z: 0}
-  - {x: -0.18975899, y: -0.19381578, z: 0}
-  - {x: -0.17927906, y: 0.7972972, z: 0}
-  - {x: -0.05542922, y: 0.88545954, z: 0}
-  - {x: 0.1746456, y: 0.7834012, z: 0}
-  - {x: 0.15301438, y: 0.23233634, z: 0}
-  - {x: 0.15611668, y: -0.8621468, z: 0}
-  m_ShapePathHash: -159589471
-  m_InstanceId: 0
-  m_ShadowShape2DComponent: {fileID: 0}
-  m_ShadowShape2DProvider:
-    rid: -2
-  m_ShadowCastingSource: 1
-  m_ShadowMesh:
-    m_Mesh: {fileID: 0}
-    m_LocalBounds:
-      m_Center: {x: -0.019137159, y: -0.03698051, z: 0}
-      m_Extent: {x: 0.19378276, y: 0.92244005, z: 0}
-    m_EdgeProcessing: 1
-    m_TrimEdge: 0.04
-    m_FlipX: 0
-    m_FlipY: 0
-    m_InitialTrim: 0
-  m_CastingOption: 2
-  m_PreviousTrimEdge: 0.04
-  m_PreviousEdgeProcessing: 1
-  m_PreviousShadowCastingSource: 1
-  m_PreviousShadowShape2DSource: {fileID: 4883368205593838540}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!1 &8236678491873177748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 0
   rotation_speed: 4
-  bullets: 0
+  bolts: 0
   taskObjects: 0
   harpoons: 0
   flashlights: 0

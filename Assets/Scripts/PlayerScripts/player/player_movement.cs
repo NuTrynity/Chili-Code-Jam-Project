@@ -17,6 +17,8 @@ public class player_movement : MonoBehaviour
     public tentacles legDown;
     private Rigidbody2D rb;
     private float angle;
+
+    public static Vector3 mousePos;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +42,7 @@ public class player_movement : MonoBehaviour
 
     private void RotateTowardCursor()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // calculating distance to mouse for blind zone
         mousePos.z = 0;
         float distance = Vector3.Distance(transform.position, mousePos);
