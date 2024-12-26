@@ -43,5 +43,11 @@ public class patrol_ai : MonoBehaviour
         targetManager.destinationSetter.target = new_patrol_node.transform;
 
         StartCoroutine(Patrol());
+        StartCoroutine(PatrolPointDestroy(new_patrol_node));
+    }
+
+    private IEnumerator PatrolPointDestroy(GameObject patrolNode) {
+        yield return new WaitForSeconds(5f);
+        Destroy(patrolNode);
     }
 }
