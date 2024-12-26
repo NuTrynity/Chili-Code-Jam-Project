@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Light
+  - player
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - Obstacle
   - Enemy
-  - 
+  - playerBody
   - 
   - 
   - 
@@ -40,8 +41,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: farBackGround
+    uniqueID: 2911110301
+    locked: 0
+  - name: closeBackGround
+    uniqueID: 2996426371
+    locked: 0
+  - name: closerBackGround
+    uniqueID: 1348083191
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ObsticleColl
+    uniqueID: 1108205293
+    locked: 0
+  - name: obsticleclos
+    uniqueID: 156163787
+    locked: 0
+  - name: obsticleCloseGround
+    uniqueID: 2416532607
     locked: 0
   m_RenderingLayers:
   - Default

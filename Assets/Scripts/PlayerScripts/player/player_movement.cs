@@ -12,11 +12,12 @@ public class player_movement : MonoBehaviour
     public Transform torso;
     public bool useLimits;
     public bool rotateWhenPressingRmb;
-    public float angularVelocityIncreaser;
+    public float blindZoneDistance;
 
     public tentacles legUp;
     public tentacles legDown;
     private Rigidbody2D rb;
+    private float angle;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,11 +41,19 @@ public class player_movement : MonoBehaviour
 
     private void RotateTowardCursor()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // calculating distance to mouse for blind zone
+        mousePos.z = 0;
+        float distance = Vector3.Distance(transform.position, mousePos);
+        
         if (canControl)
         {
             // detecting angle to mouse
-            Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (distance > blindZoneDistance)
+            {
+               Vector3 direction = mousePos - transform.position;
+               angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            }
 
             //limiting if use limits = true
             if (useLimits)

@@ -49,50 +49,50 @@ public class playerControls : MonoBehaviour
         {
             if (flashlight.active == false)
             {
-                if(downArmIsBusy)
+                if(upArmIsBusy)
                 {
                     SetDownArmOff();
                 }
-                downArmIsBusy = true;
+                upArmIsBusy = true;
                 flashlight.SetActive(true);
             }
             else
             {
-                downArmIsBusy = false;
+                upArmIsBusy = false;
                 flashlight.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && pp.lamps > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && pp.lamps > 0)
         {
             if (lamp.active == false)
             {
-                if(downArmIsBusy)
+                if(upArmIsBusy)
                 {
                     SetDownArmOff();
                 }
-                downArmIsBusy = true;
+                upArmIsBusy = true;
                 lamp.SetActive(true);
             }
             else
             {
-                downArmIsBusy = false;
+                upArmIsBusy = false;
                 lamp.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && pp.harpoons > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && pp.harpoons > 0)
         {
             if (harpoon.active == false)
             {
-                if (upArmIsBusy)
+                if (downArmIsBusy)
                 {
                     SetUpArmOff();
                 }
-                upArmIsBusy = true;
+                downArmIsBusy = true;
                 harpoon.SetActive(true);
             }
             else
             {
-                upArmIsBusy = false;
+                downArmIsBusy = false;
                 harpoon.SetActive(false);
             }
         }
