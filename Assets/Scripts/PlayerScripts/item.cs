@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class item : MonoBehaviour
 {
+    public bool taskDay1;
+    public taskManager taskManager;
     public int itemNumber;
     public bool pickUpAble;
     public ParticleSystem ableToPickUoEffect;
@@ -16,6 +18,10 @@ public class item : MonoBehaviour
             {
                 pp = collision.gameObject.GetComponent<player_properties>();
                 PickUp();
+                if(taskDay1)
+                {
+                    taskManager.Day1TaskComplete();
+                }
                 Destroy(gameObject);
             }
         }
@@ -45,6 +51,9 @@ public class item : MonoBehaviour
                 break;
             case 5:
                 pp.lamps++;
+                break;
+            case 6:
+                pp.injections++;
                 break;
         }
     }

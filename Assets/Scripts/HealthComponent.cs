@@ -2,29 +2,49 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    public int max_health = 25;
-    public int health;
+    public float max_health;
+    public float health;
 
-    public AudioSource takingDamage;
-    public AudioSource death;
+    public float curRegenTime;
 
-    public HealthComponent()
+    public AudioSource deathSound;
+    public AudioSource damageTakingSound;
+    private void Start()
     {
         health = max_health;
     }
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
-        takingDamage.Play();
+        damageTakingSound.Play();
         if (health <= 0)
         {
-           death.Play();
+            Die();
         }
     }
-
+    private void Update()
+    {
+        Regen();
+    }
     public void Die()
     {
-          
+        deathSound.Play();
+        if (gameObject.CompareTag("enemy"))
+        {
+            
+        }
+        else
+        {
+            GetComponent<player_movement>().GameOver();
+        }
+        Destroy(this);
+    }
+    public void Regen()
+    {
+        curRegenTime -= 1 *Time.deltaTime;
+        if (health < max_health && curRegenTime > 0)
+        {
+            health += 1 * Time.deltaTime;
+        }
     }
 }

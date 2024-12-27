@@ -12,4 +12,5 @@ public class player_properties : MonoBehaviour
     public int harpoons;
     public int flashlights;
     public int lamps;
+    public int injections;
 }

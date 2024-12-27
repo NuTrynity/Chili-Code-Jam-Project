@@ -46,7 +46,7 @@ public class audioZone : MonoBehaviour
         yield return new WaitForSeconds(delayPlay);
             if (audioStop != null)
             {
-                audioStop.Stop();
+                audioStop.Pause();
             }
     }
 }

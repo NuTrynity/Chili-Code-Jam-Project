@@ -1,3 +1,4 @@
+using System.Xml;
 using UnityEngine;
 
 public class playerControls : MonoBehaviour
@@ -7,6 +8,7 @@ public class playerControls : MonoBehaviour
     public tentacles legDown;
     private player_movement pm;
     private player_properties pp;
+    private HealthComponent hc;
     private Rigidbody2D rb;
 
 
@@ -17,6 +19,7 @@ public class playerControls : MonoBehaviour
     public bool downArmIsBusy;
     private void Start()
     {
+        hc = GetComponent<HealthComponent>();
         pm = GetComponent<player_movement>();
         pp = GetComponent<player_properties>();
         rb = GetComponent<Rigidbody2D>();
@@ -95,6 +98,11 @@ public class playerControls : MonoBehaviour
                 downArmIsBusy = false;
                 harpoon.SetActive(false);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            pp.injections--;
+            hc.curRegenTime = 15;
         }
     }
     private void SetUpArmOff()
