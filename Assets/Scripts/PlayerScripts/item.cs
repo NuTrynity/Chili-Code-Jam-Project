@@ -1,14 +1,17 @@
+using System;
 using System.Net.NetworkInformation;
+using UnityEditor.MemoryProfiler;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class item : MonoBehaviour
 {
-    public bool taskDay1;
-    public taskManager taskManager;
     public int itemNumber;
     public bool pickUpAble;
     public ParticleSystem ableToPickUoEffect;
     public player_properties pp;
+    public UnityEvent itemPickUpEvent;
+    public static event Action itemPickUp;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("player") && pickUpAble)
@@ -18,10 +21,6 @@ public class item : MonoBehaviour
             {
                 pp = collision.gameObject.GetComponent<player_properties>();
                 PickUp();
-                if(taskDay1)
-                {
-                    taskManager.Day1TaskComplete();
-                }
                 Destroy(gameObject);
             }
         }
@@ -35,6 +34,8 @@ public class item : MonoBehaviour
     }
     public void PickUp()
     {
+        itemPickUpEvent.Invoke();
+        itemPickUp.Invoke();
         switch (itemNumber)
         {
             case 1:

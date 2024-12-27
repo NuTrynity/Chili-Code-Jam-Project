@@ -6,7 +6,7 @@ public class bolt : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 50;
-
+    public AudioSource[] damageDealing;
     public bool dealedDamage;
     private item item;
     private Rigidbody2D rb;
@@ -35,6 +35,11 @@ public class bolt : MonoBehaviour
                 rb.angularVelocity = 0;
                 StartCoroutine(PenetraringEnemy(other.gameObject));
                 dealedDamage = true;
+
+                int randomSound = Random.Range(0, damageDealing.Length);
+                {
+                    damageDealing[randomSound].Play();
+                }
             }
         }
         

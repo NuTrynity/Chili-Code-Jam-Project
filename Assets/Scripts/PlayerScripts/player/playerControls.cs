@@ -6,6 +6,10 @@ public class playerControls : MonoBehaviour
     [Header("LEGS")]
     public tentacles legUp;
     public tentacles legDown;
+
+    [Header("SOUNDS")]
+    public AudioSource flashLightOnAndOff;
+
     private player_movement pm;
     private player_properties pp;
     private HealthComponent hc;
@@ -57,11 +61,13 @@ public class playerControls : MonoBehaviour
                     SetDownArmOff();
                 }
                 upArmIsBusy = true;
+                flashLightOnAndOff.Play();
                 flashlight.SetActive(true);
             }
             else
             {
                 upArmIsBusy = false;
+                flashLightOnAndOff.Play();
                 flashlight.SetActive(false);
             }
         }

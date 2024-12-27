@@ -1,26 +1,63 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class darkScreenFading : MonoBehaviour
 {
-    private Image im;
+    public Image darkScreen;
+    public float delay;
     public float fadingSpeed;
-    public bool setOffWhen0;
-    public bool setOffWhen1;
+    public float timer;
+    public bool setInvisibleWhenEnter;
+
+    private bool canStartFading;
     private void Start()
     {
-        im = GetComponent<Image>();
+        StartCoroutine(Timer());
+        StartCoroutine(Delay());
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (canStartFading)
+        {
+            if (collision.gameObject.CompareTag("player"))
+            {
+                darkScreen.gameObject.SetActive(true);
+                if (setInvisibleWhenEnter)
+                {
+                    darkScreen.color = new Color(0, 0, 0, 0);
+                }
+                else
+                {
+                    darkScreen.color = Color.black;
+                }
+            }
+        }
     }
     private void Update()
     {
-        im.color += new Color(0, 0, 0, fadingSpeed) * Time.deltaTime;
-        if(setOffWhen0 == true && im.color == new Color(0, 0, 0, 0))
+        if (canStartFading)
         {
-            gameObject.SetActive(false);
+            if (setInvisibleWhenEnter)
+            {
+                darkScreen.color += new Color(0, 0, 0, fadingSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                darkScreen.color -= new Color(0, 0, 0, fadingSpeed) * Time.deltaTime;
+            }
         }
-        if (setOffWhen1 == true && im.color == new Color(0, 0, 0, 255))
-        {
-            gameObject.SetActive(false);
-        }
+    }
+    private IEnumerator Timer()
+    {
+        float totaltime = timer + delay;
+        yield return new WaitForSeconds(totaltime);
+        darkScreen.gameObject.SetActive(false);
+    }
+    private IEnumerator Delay()
+    {
+        canStartFading = false;
+        yield return new WaitForSeconds(delay);
+        canStartFading = true;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Light
   - player
   - PatrolNode
+  - item
   layers:
   - Default
   - TransparentFX

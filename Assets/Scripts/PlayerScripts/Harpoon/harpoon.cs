@@ -36,7 +36,7 @@ public class harpoon : MonoBehaviour
     private void ShootBolt()
     {
         new_bolt = Instantiate(boltPrefab, firePoint.position, firePoint.rotation);
-        new_bolt.GetComponent<Rigidbody2D>().simulated = true;
+        new_bolt.GetComponentInChildren<Rigidbody2D>().simulated = true;
         StartCoroutine(AddColider());
         new_bolt.AddComponent<BoxCollider2D>();
         StartCoroutine(SetBoltAsItem());

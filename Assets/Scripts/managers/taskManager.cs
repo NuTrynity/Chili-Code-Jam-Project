@@ -11,6 +11,6 @@ public class taskManager : MonoBehaviour
     }
     public void Day2TaskComplete()
     {
-        
+        levelEndTrigger.SetActive(true);
     }
 }

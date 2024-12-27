@@ -1,24 +1,44 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class audioZone : MonoBehaviour
 {
     public string tagToDetect;
+    [Header("ON TRIGGER ENTER")]
     public AudioSource audioPlay;
     public float delayPlay;
     public bool setOffAfterEnterning;
+    public GameObject activateObj;
+    [Header("ON TRIGGER EXIT")]
     public AudioSource audioStop;
     public float delayStop;
     public bool setOffAfterExeting;
+
+    public bool dontDestroyOnLoad;
+    public UnityEvent eventOnEnter;
+    public float eventDelay;
+    private void Awake()
+    {
+        if(dontDestroyOnLoad)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(tagToDetect))
         {
             StartCoroutine(PlayWithDelay());
+            StartCoroutine(EventWithDelay());
             if (setOffAfterEnterning)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
+            }
+            if(activateObj != null)
+            {
+                activateObj.SetActive(true);
             }
         }
     }
@@ -48,5 +68,10 @@ public class audioZone : MonoBehaviour
             {
                 audioStop.Pause();
             }
+    }
+    private IEnumerator EventWithDelay()
+    {
+        yield return new WaitForSeconds(eventDelay);
+        eventOnEnter.Invoke();
     }
 }
