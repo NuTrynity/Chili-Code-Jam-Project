@@ -1,8 +1,11 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GeneralMovement : MonoBehaviour
 {
+    public Rigidbody2D body;
+
     public Vector2 GetMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
