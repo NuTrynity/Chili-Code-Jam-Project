@@ -15,6 +15,8 @@ public class tentacles : MonoBehaviour
     public float wiggleSpeed;
     public float wiggleMagnitude;
     public Transform wiggleDir;
+    public Transform[] body_parts;
+
     private void Start()
     {
         lr.positionCount = lenght;
@@ -30,6 +32,7 @@ public class tentacles : MonoBehaviour
         for (int i = 1; i < segmentPoses.Length; i++)
         {
             segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed + i / trailSpeed);
+            body_parts[i - 1].transform.position = segmentPoses[i];
         }
         lr.SetPositions(segmentPoses);
     }
