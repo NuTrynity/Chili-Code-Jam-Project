@@ -1,53 +1,40 @@
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
-
-public class patrol_ai : MonoBehaviour
+public class PatrolAI : MonoBehaviour
 {
-    public float patrol_distance = 5f;
-    public float patrol_interval = 5f;
-    public GameObject patrol_node;
+    public AIDestinationSetter targetManager;
+    public Transform[] patrol_points;
 
-    private target_manager targetManager;
+    private bool aggro = false;
+    private int patrol_index = 0;
 
-    private void Awake()
+    public void SetAggro(bool value)
     {
-        targetManager = GetComponentInChildren<target_manager>();
-
-        StartCoroutine(Patrol());
+        aggro = value;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.name == "PatrolNode(Clone)")
+    private void FixedUpdate() {
+        if (aggro == true)
         {
-            if (targetManager.destinationSetter != null)
-            {
-                Debug.Log("Patrol node reached");
-            }
+            return;
         }
+
+        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < 1f)
+        {
+            IncreasePatrolIndex();
+        }
+
+        targetManager.target = patrol_points[patrol_index];
     }
 
-    public Vector2 RandPath()
+    private void IncreasePatrolIndex()
     {
-        float randomDistance = Random.Range(1f, patrol_distance);
-        Vector2 new_path = transform.position + new Vector3(Random.Range(-randomDistance, randomDistance), Random.Range(-randomDistance, randomDistance), 0);
-        return new_path;
-    }
+        patrol_index++;
 
-    private IEnumerator Patrol()
-    {
-        GameObject new_patrol_node = Instantiate(patrol_node);
-
-        yield return new WaitForSeconds(Random.Range(3f, patrol_interval));
-
-        new_patrol_node.transform.position = RandPath();
-        targetManager.destinationSetter.target = new_patrol_node.transform;
-
-        StartCoroutine(Patrol());
-        StartCoroutine(PatrolPointDestroy(new_patrol_node));
-    }
-
-    private IEnumerator PatrolPointDestroy(GameObject patrolNode) {
-        yield return new WaitForSeconds(5f);
-        Destroy(patrolNode);
+        if (patrol_index >= patrol_points.Length)
+        {
+            patrol_index = 0;
+        }
     }
 }

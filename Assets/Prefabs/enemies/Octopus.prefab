@@ -793,6 +793,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_health: 1
+  takingDamage: {fileID: 0}
+  death: {fileID: 0}
 --- !u!114 &2588208636110807163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,9 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e6a727b2a15c9a59ba3a0fe81adbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrol_distance: 5
-  patrol_interval: 5
-  patrol_node: {fileID: 3356054692814196710}
+  targetManager: {fileID: 1845966191556280222}
+  patrol_points: []
 --- !u!58 &5786116065636626218
 CircleCollider2D:
   m_ObjectHideFlags: 0
