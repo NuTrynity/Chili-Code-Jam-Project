@@ -16,7 +16,6 @@ public class target_manager : MonoBehaviour
     private void Update() {
         if (can_chase == false) {
             hide_time -= Time.deltaTime;
-            Debug.Log("Hide Time: " + hide_time);
             if (hide_time <= 0) {
                 can_chase = true;
                 hide_time = 5f;
@@ -40,7 +39,6 @@ public class target_manager : MonoBehaviour
     }
 
     public void ChangeTarget(Transform target) {
-        Debug.Log("Target Changed to " + target.name);
         destinationSetter.target = target;
     }
 }
