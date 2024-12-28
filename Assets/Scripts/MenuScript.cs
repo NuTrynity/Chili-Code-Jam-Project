@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public SceneLoader sceneLoader;
+    public GameObject sceneLoader;
 
     public void OnPlayClicked() {
-        sceneLoader.ChangeScene("day1");
+        sceneLoader.GetComponent<SceneLoader>().ChangeScene("day1");
     }
 }

@@ -1,10 +1,20 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public Animator anim;
+
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadLevel(sceneName));
+    }
+
+    private IEnumerator LoadLevel(string target)
+    {
+        anim.SetTrigger("Start");
+        yield return new WaitForSeconds(0.4f);
+        SceneManager.LoadScene(target);
     }
 }
