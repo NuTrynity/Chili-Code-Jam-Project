@@ -4,12 +4,13 @@ using UnityEngine;
 public class target_manager : MonoBehaviour
 {
     public AIDestinationSetter destinationSetter;
+    public PatrolAI patrol_ai;
 
     public float hide_time = 5f;
     public bool can_chase = true;
 
     private void Awake() {
-        destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
+        patrol_ai.PatrolPoint();
     }
 
     private void Update() {
@@ -21,12 +22,20 @@ public class target_manager : MonoBehaviour
                 hide_time = 5f;
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player") && can_chase == true) {
+        if (other.CompareTag("player") && can_chase == true) {
             ChangeTarget(other.transform);
+            patrol_ai.SetAggro(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("player"))
+        {
+            patrol_ai.PatrolPoint();
+            patrol_ai.SetAggro(false);
         }
     }
 
