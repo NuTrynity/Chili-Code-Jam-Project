@@ -370,10 +370,10 @@ RectTransform:
   - {fileID: 1910504308}
   m_Father: {fileID: 1917490416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -919.9442, y: -350.4023}
+  m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112713050
 MonoBehaviour:
@@ -424,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 3673510041503607474, guid: 3fd47f6333a62d703965a7b5dcb15d22, type: 3}
       propertyPath: m_Name
       value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173070680586115016, guid: 3fd47f6333a62d703965a7b5dcb15d22, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6902875441093533653, guid: 3fd47f6333a62d703965a7b5dcb15d22, type: 3}
       propertyPath: m_Pivot.x
@@ -598,9 +602,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917490412}
+      - m_Target: {fileID: 1917490417}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnPlayClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1134,7 +1138,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1917490416
 RectTransform:
