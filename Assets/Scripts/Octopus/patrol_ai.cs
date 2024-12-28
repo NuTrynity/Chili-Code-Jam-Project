@@ -1,5 +1,4 @@
 using Pathfinding;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 public class PatrolAI : MonoBehaviour
 {
@@ -15,19 +14,14 @@ public class PatrolAI : MonoBehaviour
         aggro = value;
     }
 
-    private void FixedUpdate() {
+    public void PatrolPoint() {
         if (aggro == true)
         {
             return;
         }
 
-        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < distance)
-        {
-            IncreasePatrolIndex();
-        }
-        Debug.Log(Vector3.Distance(transform.position, patrol_points[patrol_index].position));
-
         targetManager.target = patrol_points[patrol_index];
+        Debug.Log("New target set: " + targetManager.target);
     }
 
     private void IncreasePatrolIndex()
@@ -37,6 +31,15 @@ public class PatrolAI : MonoBehaviour
         if (patrol_index >= patrol_points.Length)
         {
             patrol_index = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.LogError(Vector3.Distance(transform.position, patrol_points[patrol_index].position));
+        if (other.CompareTag("PatrolNode") && Vector3.Distance(transform.position, patrol_points[patrol_index].position) < distance)
+        {
+            IncreasePatrolIndex();
+            PatrolPoint();
         }
     }
 }
