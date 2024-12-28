@@ -3,8 +3,12 @@ using UnityEngine;
 public class globalSounds : MonoBehaviour
 {
     public AudioSource[] itemPickOpSounds;
-    public AudioSource music;
     private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        item.itemPickUp += PlayItemSound;
+    }
+    private void OnDisable()
     {
         item.itemPickUp += PlayItemSound;
     }
@@ -12,10 +16,6 @@ public class globalSounds : MonoBehaviour
     {
         int randomSound = Random.Range(0, itemPickOpSounds.Length);
         itemPickOpSounds[randomSound].Play();
-    }
-    public void PlayMusic()
-    {
-        music.Play();
     }
     
 }

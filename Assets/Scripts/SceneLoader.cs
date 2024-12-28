@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadLevel(string target)
     {
         anim.SetTrigger("Start");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(target);
     }
 }

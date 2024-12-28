@@ -11,6 +11,7 @@ public class harpoon : MonoBehaviour
 
     private bool reloaded = true;
     private bool startedReload = false;
+    public AudioSource reloadSound;
 
     public AudioSource[] shootSounds;
     private void OnEnable()
@@ -66,7 +67,9 @@ public class harpoon : MonoBehaviour
     private IEnumerator StartCooldown(float cooldown_timer)
     {
         startedReload = true;
-        yield return new WaitForSeconds(cooldown_timer);
+        yield return new WaitForSeconds(1);
+        reloadSound.Play();
+        yield return new WaitForSeconds(cooldown_timer -1);
         reloaded = true;
         startedReload = false;
         boltPrefab.SetActive(true);
