@@ -1050,6 +1050,14 @@ PrefabInstance:
       propertyPath: 'patrol_points.Array.data[5]'
       value: 
       objectReference: {fileID: 1751865493}
+    - target: {fileID: 5478434826296437598, guid: e450acec5aeceb75fb783c766ef2dce6, type: 3}
+      propertyPath: radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478434826296437598, guid: e450acec5aeceb75fb783c766ef2dce6, type: 3}
+      propertyPath: alwaysDrawGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8375475275555885659, guid: e450acec5aeceb75fb783c766ef2dce6, type: 3}
       propertyPath: m_Name
       value: enemy1
