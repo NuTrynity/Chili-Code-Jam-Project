@@ -15,9 +15,11 @@ public class audioZone : MonoBehaviour
     public AudioSource audioStop;
     public float delayStop;
     public bool setOffAfterExeting;
+    public GameObject deActivateObj;
 
     public bool dontDestroyOnLoad;
     public UnityEvent eventOnEnter;
+    
     public float eventDelay;
     private void Awake()
     {
@@ -36,10 +38,6 @@ public class audioZone : MonoBehaviour
             {
                 GetComponent<BoxCollider2D>().enabled = false;
             }
-            if(activateObj != null)
-            {
-                activateObj.SetActive(true);
-            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -56,10 +54,18 @@ public class audioZone : MonoBehaviour
     private IEnumerator PlayWithDelay()
     {
         yield return new WaitForSeconds(delayPlay);
-            if (audioPlay != null)
+            if (audioPlay != null && audioPlay.isPlaying == false)
             {
                 audioPlay.Play();
             }
+            if(activateObj != null)
+            {
+                activateObj.SetActive(true);
+            }
+    }
+    public void Stop()
+    {
+        StartCoroutine (StopWithDelay());
     }
     private IEnumerator StopWithDelay()
     {
@@ -68,6 +74,10 @@ public class audioZone : MonoBehaviour
             {
                 audioStop.Pause();
             }
+        if (deActivateObj != null)
+        {
+            deActivateObj.SetActive(false);
+        }
     }
     private IEnumerator EventWithDelay()
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class globalSounds : MonoBehaviour
 {
+    public GameObject beginningMusic;
     public AudioSource[] itemPickOpSounds;
     private void Awake()
     {

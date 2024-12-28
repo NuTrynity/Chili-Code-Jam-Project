@@ -20,6 +20,7 @@ public class darkScreenFading : MonoBehaviour
     {
         if (canStartFading)
         {
+            gameObject.SetActive(true);
             if (collision.gameObject.CompareTag("player"))
             {
                 darkScreen.gameObject.SetActive(true);

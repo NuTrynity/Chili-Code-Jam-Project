@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2882036708771844094}
   - component: {fileID: 4448104854627713706}
   - component: {fileID: 616705810222797050}
+  - component: {fileID: 3768602635506914998}
   m_Layer: 6
   m_Name: rock2
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.9565315, y: 196.15656, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -167,3 +168,56 @@ PolygonCollider2D:
       - {x: 4.03125, y: -3.0625}
       - {x: 4.53125, y: -2.6875}
   m_UseDelaunayMesh: 0
+--- !u!114 &3768602635506914998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368457502395661317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 15
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000edde0d42
+  m_ShapePath:
+  - {x: -4.531254, y: -3.75, z: 0}
+  - {x: -4.531254, y: 3.75, z: 0}
+  - {x: 4.53125, y: 3.75, z: 0}
+  - {x: 4.53125, y: -3.75, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 616705810222797050}
+  m_ShadowShape2DProvider:
+    rid: 5003718638569521233
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.10545349, y: 0.000015258789, z: 0}
+      m_Extent: {x: 3.6258392, y: 3.074997, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.8
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.7
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.8
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 616705810222797050}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5003718638569521233
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 

@@ -38,7 +38,6 @@ public class harpoon : MonoBehaviour
     {
         new_bolt = Instantiate(boltPrefab, firePoint.position, firePoint.rotation);
         new_bolt.GetComponentInChildren<Rigidbody2D>().simulated = true;
-        StartCoroutine(AddColider());
         new_bolt.AddComponent<BoxCollider2D>();
         StartCoroutine(SetBoltAsItem());
 
@@ -53,16 +52,12 @@ public class harpoon : MonoBehaviour
     private IEnumerator SetBoltAsItem()
     {
         bolt bolt = new_bolt.GetComponent<bolt>();
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         if(bolt.dealedDamage == false)
         {
             bolt.dealedDamage = true;
             new_bolt.GetComponent<item>().pickUpAble = true;
         }
-    }
-    private IEnumerator AddColider()
-    {
-        yield return new WaitForSeconds(0.1f);
     }
     private IEnumerator StartCooldown(float cooldown_timer)
     {

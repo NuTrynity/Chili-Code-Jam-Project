@@ -9,6 +9,7 @@ public class playerControls : MonoBehaviour
 
     [Header("SOUNDS")]
     public AudioSource flashLightOnAndOff;
+    public AudioSource[] healingSound;
 
     private player_movement pm;
     private player_properties pp;
@@ -105,10 +106,12 @@ public class playerControls : MonoBehaviour
                 harpoon.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.V) && pp.injections > 0)
         {
+            int randSound = Random.Range(0, healingSound.Length);
+            healingSound[randSound].Play();
+            hc.curRegenTime = 22;
             pp.injections--;
-            hc.curRegenTime = 15;
         }
     }
     private void SetUpArmOff()
