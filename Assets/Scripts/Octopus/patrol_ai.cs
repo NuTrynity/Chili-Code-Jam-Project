@@ -1,4 +1,3 @@
-using System.Collections;
 using Pathfinding;
 using UnityEngine;
 public class PatrolAI : MonoBehaviour
@@ -6,7 +5,7 @@ public class PatrolAI : MonoBehaviour
     public AIDestinationSetter targetManager;
     public Transform[] patrol_points;
 
-    private bool aggro = false;
+    public bool aggro = false;
     private int patrol_index = 0;
 
     public void SetAggro(bool value)
