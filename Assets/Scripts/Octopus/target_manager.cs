@@ -9,7 +9,7 @@ public class target_manager : MonoBehaviour
     public bool can_chase = true;
 
     private void Awake() {
-        destinationSetter = gameObject.GetComponentInParent<AIDestinationSetter>();
+        destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
     }
 
     private void Update() {
