@@ -6,7 +6,7 @@ public class PatrolAI : MonoBehaviour
     public AIDestinationSetter targetManager;
     public Transform[] patrol_points;
 
-    private bool aggro = false;
+    public bool aggro = false;
     private int patrol_index = 0;
 
     public void SetAggro(bool value)
@@ -20,7 +20,7 @@ public class PatrolAI : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < 1f)
+        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < 8f)
         {
             IncreasePatrolIndex();
         }
