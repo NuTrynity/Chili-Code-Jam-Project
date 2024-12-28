@@ -1,4 +1,3 @@
-using System.Collections;
 using Pathfinding;
 using UnityEngine;
 public class PatrolAI : MonoBehaviour
