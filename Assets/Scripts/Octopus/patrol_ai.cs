@@ -21,7 +21,6 @@ public class PatrolAI : MonoBehaviour
         }
 
         targetManager.target = patrol_points[patrol_index];
-        Debug.Log("New target set: " + targetManager.target);
     }
 
     private void IncreasePatrolIndex()
