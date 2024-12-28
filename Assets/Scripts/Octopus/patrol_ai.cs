@@ -1,4 +1,5 @@
 using Pathfinding;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 public class PatrolAI : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class PatrolAI : MonoBehaviour
     public Transform[] patrol_points;
 
     public bool aggro = false;
+    public float distance = 5f;
     private int patrol_index = 0;
 
     public void SetAggro(bool value)
@@ -19,10 +21,11 @@ public class PatrolAI : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < 8f)
+        if (Vector3.Distance(transform.position, patrol_points[patrol_index].position) < distance)
         {
             IncreasePatrolIndex();
         }
+        Debug.Log(Vector3.Distance(transform.position, patrol_points[patrol_index].position));
 
         targetManager.target = patrol_points[patrol_index];
     }
